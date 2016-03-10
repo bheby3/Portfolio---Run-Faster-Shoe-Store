@@ -1,0 +1,26 @@
+<div class="row overpronate">
+    <div class="large-3 medium-4 columns" ng-repeat="prod in products">
+        <img ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">
+        <br>
+        Brand: {{prod.brand}} &nbsp;&nbsp;
+        Model: {{prod.model}}
+        Stability: {{prod.stability}}
+        <br>
+        Price: {{prod.price | currency}}
+
+        <!--<img ng-src="http://placeimg.com/200/200/people" alt="">-->
+
+        <!--<img ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">-->
+        <!--Category: {{prod.category}}-->
+        <!--<br>-->
+        <!--Stability: {{prod.stability}}-->
+        <!--<br>-->
+        <!--Styles: {{prod.styles}}-->
+        <!--<br>-->
+        <!--Width: {{prod.width}}-->
+        <!--<br>-->
+        <!--Id: {{prod._id}}-->
+        <!--<br>-->
+        <button class="button" ng-click="removeProduct(prod._id)">delete product</button>
+    </div>
+</div>

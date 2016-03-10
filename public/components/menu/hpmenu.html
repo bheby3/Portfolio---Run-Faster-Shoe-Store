@@ -1,0 +1,59 @@
+<div class="hpMenu">
+    <div class=""><a href="" class="off-canvas-submenu-called">Shoe Categories <span class="left"> + </span></a>
+    </div>
+    <ul class="off-canvas-submenued ">
+
+        <a ui-sref="selectProduct">Neutral Shoes</a>
+        <br>
+        <a ui-sref="selectProduct">Support Shoes</a>
+        <br>
+        <a ui-sref="selectProduct">Motion Control Shoes</a>
+        <br>
+        <a ui-sref="selectProduct">Road Shoes</a>
+        <br>
+        <a ui-sref="selectProduct">Trail Shoes</a>
+        <br>
+        <a ui-sref="selectProduct">Track Shoes</a>
+        <br>
+        <a ui-sref="selectProduct">Cross Country Shoes</a>
+        <br>
+        <a ui-sref="selectProduct">Minimal Shoes</a>
+    </ul>
+
+    <div class=""><a href="" class="off-canvas-submenu-called">Brand<span class="left"> + </span></a>
+    </div>
+    <ul class="off-canvas-submenued ulbox">
+
+        <a ui-sref="selectProduct">Altra</a>
+        <br>
+        <a ui-sref="selectProduct">Asics</a>
+        <br>
+        <a ui-sref="selectProduct">Brooks</a>
+        <br>
+        <a ui-sref="selectProduct">Hoka</a>
+        <br>
+        <a ui-sref="selectProduct">Mizuno</a>
+        <br>
+        <a ui-sref="selectProduct">Saucony</a>
+    </ul>
+
+</div>
+
+<!--<input type="checkbox"><label>Road</label>-->
+<!--<br>-->
+<!--<input type="checkbox"><label>Trail</label>-->
+<!--<br>-->
+<!--<input type="checkbox"><label>Track</label>-->
+
+<!--</div>-->
+
+
+<script>
+    $(document).foundation();
+    $(".off-canvas-submenued").hide();
+    $(".off-canvas-submenu-called").click(function () {
+        var icon = $(this).parent().next(".off-canvas-submenued").is(':visible') ? '+' : '-';
+        $(this).parent().next(".off-canvas-submenued").slideToggle('fast');
+        $(this).find("span").text(icon);
+    });
+</script>

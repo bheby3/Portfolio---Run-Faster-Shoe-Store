@@ -1,0 +1,156 @@
+<navbar></navbar>
+
+<div class="cartTotalWrapper">
+    <div class="totalItems">TOTAL ITEMS<div class="totalItems"> {{cartItems}}</div></div>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="totalItems">TOTAL PRICE <div class="totalPrice">{{cartTotal | currency}}</div></div>
+    <!--<div class="totalItems">TOTAL PRICE W/TAX<div class="totalPrice">{{cartTotalTax | currency}}</div></div>-->
+    <div class="totalItems"><button ui-sref="checkout" class="button">PURCHASE</button></div>
+</div>
+
+<div class="selectShoeMargin">
+    <div class="shoeContainer" ng-repeat="product in customerCart">
+        <!--name:{{product.displayName}}-->
+        <div class="large-3 medium-6 columns profile-card " ng-repeat="prod in product.cart">
+            <!--{{prod.brand}}-->
+            <!--<img class="item-image" ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">-->
+            <span class="model">{{prod.brand}}</span>
+
+            <!--<span class="model">offset:{{prod.offset}}</span> &nbsp;&nbsp;-->
+            <!--<br>-->
+            <span class="model">{{prod.model}}</span> &nbsp;&nbsp;
+            <br>
+            <!--<span class="model">{{prod.model}}</span> &nbsp;&nbsp;-->
+            <!--<span class="model">{{prod.styles}}</span>-->
+            <!--<br>-->
+            <!--<span class="model">{{prod.stability}}</span> &nbsp;&nbsp;-->
+            <!--<br>-->
+
+            <!--<div class="style" ng-repeat="style in prod.styles">{{style}}</div>-->
+            <br>
+            <a ng-click="showProductDetails(prod)">
+                <img class="item-image" ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">
+            </a>
+            <br><br>
+            <!--<hr>-->
+            <span class="price">Price: {{prod.price | currency}}</span>
+            <!--<span class="description">{{prod.stability}}</span>-->
+            <br>
+            <div class="description"><span>{{prod.description}}</span></div>
+            <!--<img ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">-->
+            <!--Category: {{prod.category}}-->
+            <!--<br>-->
+            <!--Stability: {{prod.stability}}-->
+            <!--<br>-->
+            <!--Styles: {{prod.styles}}-->
+            <!--<br>-->
+            <!--<button class="button" ng-click="removeProduct(prod._id)">delete product</button>-->
+            <br>
+            <div class="flexRow"><button class="button" ng-click="removeProductFromCart(prod._id)">remove product</button></div>
+        </div>
+    </div>
+</div>
+
+<!--<script>
+
+    $(document).foundation();
+    $(".off-canvas-submenu").hide();
+    $(".off-canvas-submenu-call").click(function () {
+        var icon = $(this).parent().next(".off-canvas-submenu").is(':visible') ? '+' : '-';
+        $(this).parent().next(".off-canvas-submenu").slideToggle('fast');
+        $(this).find("span").text(icon);
+    });
+
+
+    //    if ($(window).width() > 650) {
+    //Add your javascript for large screens here
+    if (menuVariable) {
+        $("#leftButton").on('click', function () {
+//            toggleMenu();
+            var toggle = $(this).data('toggle');
+
+            $('#content').css('margin-left', toggle ? -210 : 0);
+
+            $(this).data('toggle', !toggle);
+        });
+    }
+
+
+</script>-->
+
+<!--<div class="row shoeCont">
+&lt;!&ndash;<div class="large-3 medium-4 columns profile-card" ng-repeat="prod in products | support:stabilityFilter">&ndash;&gt;
+<div class="large-3 medium-6 columns profile-card shoes" ng-repeat="prod in product.cart | multiFilter:filter">
+{{filter}}
+&lt;!&ndash;<div class="large-3 medium-4 columns profile-card shoes" ng-repeat="prod in products | filter: filter">&ndash;&gt;
+
+<span class="model">{{prod.model}}</span> &nbsp;&nbsp;
+<br>
+<div class="style" ng-repeat="style in prod.styles">{{style}}</div>
+<img class="item-image" ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">
+<hr>
+<span class="price">Price: {{prod.price | currency}}</span>
+<span class="description">{{prod.stability}}</span>
+<br>
+<span class="description">{{prod.description}}</span>
+{{prod.image}}
+<img ng-src="http://placeimg.com/200/200/people" alt="">
+
+<img ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">
+Category: {{prod.category}}
+<br>
+Stability: {{prod.stability}}
+<br>
+Styles: {{prod.styles}}
+<br>
+&lt;!&ndash;Width: {{prod.width}}&ndash;&gt;
+&lt;!&ndash;<br>&ndash;&gt;
+&lt;!&ndash;Id: {{prod._id}}&ndash;&gt;
+&lt;!&ndash;<br>&ndash;&gt;
+&lt;!&ndash;<button class="button" ui-sref="product">select product</button>&ndash;&gt;
+<button class="button" ng-click="addProductToCart(prod._id)">add product</button>
+&lt;!&ndash;<button class="button" ng-click="addCartProduct(prod._id)">add to cart</button>&ndash;&gt;
+<button class="button" ng-click="removeProduct(prod._id)">delete product</button>
+</div>
+
+
+</div>
+</div>-->
+<!--
+<div class="row shoeCont">
+&lt;!&ndash;<div class="large-3 medium-4 columns profile-card" ng-repeat="prod in products | support:stabilityFilter">&ndash;&gt;
+<div class="large-3 medium-6 columns profile-card shoes" ng-repeat="prod in customerCart | multiFilter:filter">
+{{filter}}
+&lt;!&ndash;<div class="large-3 medium-4 columns profile-card shoes" ng-repeat="prod in products | filter: filter">&ndash;&gt;
+
+<span class="model">{{prod.model}}</span> &nbsp;&nbsp;
+<br>
+<div class="style" ng-repeat="style in prod.styles">{{style}}</div>
+<img class="item-image" ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">
+<hr>
+<span class="price">Price: {{prod.price | currency}}</span>
+<span class="description">{{prod.stability}}</span>
+<br>
+<span class="description">{{prod.description}}</span>
+&lt;!&ndash;{{prod.image}}&ndash;&gt;
+&lt;!&ndash;<img ng-src="http://placeimg.com/200/200/people" alt="">&ndash;&gt;
+
+&lt;!&ndash;<img ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">&ndash;&gt;
+&lt;!&ndash;Category: {{prod.category}}&ndash;&gt;
+&lt;!&ndash;<br>&ndash;&gt;
+&lt;!&ndash;Stability: {{prod.stability}}&ndash;&gt;
+&lt;!&ndash;<br>&ndash;&gt;
+&lt;!&ndash;Styles: {{prod.styles}}&ndash;&gt;
+&lt;!&ndash;<br>&ndash;&gt;
+&lt;!&ndash;Width: {{prod.width}}&ndash;&gt;
+&lt;!&ndash;<br>&ndash;&gt;
+&lt;!&ndash;Id: {{prod._id}}&ndash;&gt;
+&lt;!&ndash;<br>&ndash;&gt;
+&lt;!&ndash;<button class="button" ui-sref="product">select product</button>&ndash;&gt;
+<button class="button" ng-click="addProductToCart(prod._id)">add product</button>
+&lt;!&ndash;<button class="button" ng-click="addCartProduct(prod._id)">add to cart</button>&ndash;&gt;
+<button class="button" ng-click="removeProduct(prod._id)">delete product</button>
+</div>
+
+
+</div>-->

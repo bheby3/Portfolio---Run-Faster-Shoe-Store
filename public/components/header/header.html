@@ -1,0 +1,28 @@
+<div class="callout">
+    <div class="row column">
+        <h1>Image</h1>
+        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/22889-200.png" alt="">
+        <!--<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed-->
+            <!--urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam-->
+            <!--mattis viverra. Nulla fringilla.</p>-->
+    </div>
+</div>
+<div data-magellan-expedition="fixed">
+    <dl class="sub-nav">
+        <dd data-magellan-arrival="build"><a href="#build">Build with HTML</a></dd>
+        <dd data-magellan-arrival="js"><a href="#js">Arrival 2</a></dd>
+    </dl>
+</div>
+
+<script src="">
+    $(document).foundation({
+        "magellan-expedition": {
+            active_class: 'active', // specify the class used for active sections
+            threshold: 0, // how many pixels until the magellan bar sticks, 0 = auto
+            destination_threshold: 20, // pixels from the top of destination for it to be considered active
+            throttle_delay: 50, // calculation throttling to increase framerate
+            fixed_top: 0, // top distance in pixels assigend to the fixed element on scroll
+            offset_by_height: true // whether to offset the destination by the expedition height. Usually you want this to be true, unless your expedition is on the side.
+        }
+    });
+</script>

@@ -1,0 +1,151 @@
+<div class="stickyMenuContainer">
+
+    <div class=""><a href="" class="off-canvas-submenu-calls">Gender<span class="right"> + </span></a></div>
+    <div class="off-canvas-submenus ulbox">
+
+    <input ng-model="filter.female" ng-change="updateGenderArray('female', filter.female)" type="checkbox"><label>Female</label>
+    <br>
+    <input ng-model="filter.male" ng-change="updateGenderArray('male', filter.male)" type="checkbox"><label>Male</label>
+    </div>
+
+    <div class="mhead"><a href="" class="off-canvas-submenu-calls">Pronation Control <span class="left"> + </span></a>
+    </div>
+    <div class="off-canvas-submenus ulbox">
+
+        <div class="mbox"><input type="checkbox" ng-model="filter.neutralmin" ng-change="updateStabilityArray('neutralmin', filter.neutralmin)"><label>Neutral-Minimum</label>
+        </div>
+        <!--filter.neutralmin are going to equal true or false if clicked it equals true-->
+        <div class="mbox"><input type="checkbox" ng-model="filter.neutralmod" ng-change="updateStabilityArray('neutralmod', filter.neutralmod)"><label>Neutral-Moderate</label>
+        </div>
+        <div class="mbox"><input type="checkbox" ng-model="filter.supportmin" ng-change="updateStabilityArray('supportmin', filter.supportmin)"><label>Support-Minimum</label>
+        </div>
+        <div class="mbox"><input type="checkbox" ng-model="filter.supportmod" ng-change="updateStabilityArray('supportmod', filter.supportmod)"><label>Support-Moderate</label>
+        </div>
+        <div class="mbox"><input type="checkbox" ng-model="filter.supportmax" ng-change="updateStabilityArray('supportmax', filter.supportmax)"><label>Support-Maximum</label>
+        </div>
+        <div class="mbox"><input type="checkbox" ng-model="filter.supportmc" ng-change="updateStabilityArray('supportmc', filter.supportmc)"><label>Motion Control</label>
+        </div>
+
+    </div>
+
+    <div class="mhead"><a href="" class="off-canvas-submenu-calls">Brand <span class="right"> + </span></a></div>
+    <div class="off-canvas-submenus ulbox">
+
+        <input ng-model="filter.altra" ng-change="updateBrandArray('Altra', filter.altra)" type="checkbox"><label>Altra</label>
+        <br>
+        <input ng-model="filter.asics" ng-change="updateBrandArray('Asics', filter.asics)" type="checkbox"><label>Asics</label>
+        <br>
+        <input ng-model="filter.brooks" ng-change="updateBrandArray('Brooks', filter.brooks)" type="checkbox"><label>Brooks</label>
+        <br>
+        <input ng-model="filter.hoka" ng-change="updateBrandArray('Hoka', filter.hoka)" type="checkbox"><label>Hoka</label>
+        <br>
+        <input ng-model="filter.mizuno" ng-change="updateBrandArray('Mizuno', filter.mizuno)" type="checkbox"><label>Mizuno</label>
+        <br>
+        <input ng-model="filter.nike" ng-change="updateBrandArray('Nike', filter.nike)" type="checkbox"><label>Nike</label>
+        <br>
+        <input ng-model="filter.saucony" ng-change="updateBrandArray('Saucony', filter.saucony)" type="checkbox"><label>Saucony</label>
+    </div>
+
+    <div class="mhead"><a href="" class="off-canvas-submenu-calls">Heel-Toe Offset <span class="right"> + </span></a>
+    </div>
+    <div class="off-canvas-submenus ulbox">
+
+        <input ng-model="filter.zero" ng-change="updateOffsetArray('0', filter.zero)" type="checkbox"><label>0mm</label>
+        <br>
+        <input ng-model="filter.one" ng-change="updateOffsetArray('1', filter.one)" type="checkbox"><label>1mm</label>
+        <br>
+        <input ng-model="filter.two" ng-change="updateOffsetArray('2', filter.two)" type="checkbox"><label>2mm *</label>
+        <br>
+        <input ng-model="filter.three" ng-change="updateOffsetArray('3', filter.three)" type="checkbox"><label>3mm</label>
+        <br>
+        <input ng-model="filter.four" ng-change="updateOffsetArray('4', filter.four)" type="checkbox"><label>4mm</label>
+        <br>
+        <input ng-model="filter.five" ng-change="updateOffsetArray('5', filter.five)" type="checkbox"><label>5mm</label>
+        <br>
+        <input ng-model="filter.six" ng-change="updateOffsetArray('6', filter.six)" type="checkbox"><label>6mm*</label>
+        <br>
+        <input ng-model="filter.seven" ng-change="updateOffsetArray('7', filter.seven)" type="checkbox"><label>7mm</label>
+        <br>
+        <input ng-model="filter.eight" ng-change="updateOffsetArray('8', filter.eight)" type="checkbox"><label>8mm</label>
+        <br>
+        <input ng-model="filter.nine" ng-change="updateOffsetArray('9', filter.nine)" type="checkbox"><label>9mm</label>
+        <br>
+        <input ng-model="filter.ten" ng-change="updateOffsetArray('10', filter.ten)" type="checkbox"><label>10mm</label>
+        <br>
+        <input ng-model="filter.eleven" ng-change="updateOffsetArray('11', filter.eleven)" type="checkbox"><label>11mm</label>
+
+    </div>
+
+    <div class="mhead"><a href="" class="off-canvas-submenu-calls">Weight<span class="right"> + </span></a></div>
+    <div class="off-canvas-submenus ulbox">
+        <input ng-model="filter.wthree" ng-change="updateWeightArray('3', filter.wthree)" type="checkbox"><label>3 oz and under</label>
+        <br>
+        <input ng-model="filter.wfour" ng-change="updateWeightArray('4', filter.wfour)" type="checkbox"><label>3.1-4.0oz</label>
+        <br>
+        <input ng-model="filter.wfive" ng-change="updateWeightArray('5', filter.wfive)" type="checkbox"><label>4.1-5.0oz</label>
+        <br>
+        <input ng-model="filter.wsix" ng-change="updateWeightArray('6', filter.wsix)" type="checkbox"><label>5.1-6.0oz</label>
+        <br>
+        <input ng-model="filter.wseven" ng-change="updateWeightArray('7', filter.wseven)" type="checkbox"><label>6.1-7.0oz</label>
+        <br>
+        <input ng-model="filter.wweight" ng-change="updateWeightArray('8', filter.wweight)" type="checkbox"><label>7.1-8.0oz</label>
+        <br>
+        <input ng-model="filter.wnine" ng-change="updateWeightArray('9', filter.wnine)" type="checkbox"><label>8.1-9.0oz</label>
+        <br>
+        <input ng-model="filter.wten" ng-change="updateWeightArray('10', filter.wten)" type="checkbox"><label>9.1-10.0oz</label>
+        <br>
+        <input ng-model="filter.weleven" ng-change="updateWeightArray('11', filter.weleven)" type="checkbox"><label>10.1-11.0oz</label>
+        <br>
+        <input ng-model="filter.wtwelve" ng-change="updateWeightArray('12', filter.wtwelve)" type="checkbox"><label>Over 12.0oz</label>
+    </div>
+
+    <!--<input ng-change="resetFilterArray()" type="checkbox"><label>reset</label>&ndash;&gt;-->
+
+    <div class="mhead"><a href="" class="off-canvas-submenu-calls">Category<span class="right"> + </span></a></div>
+    <div class="off-canvas-submenus ulbox">
+
+        <input ng-model="filter.road" ng-change="updateCategoryArray('road', filter.road)" type="checkbox"><label>Road</label>
+        <br>
+        <input ng-model="filter.roadracing" ng-change="updateCategoryArray('road-racing', filter.roadracing)" type="checkbox"><label>Road Racing</label>
+        <br>
+        <input ng-model="filter.trail" ng-change="updateCategoryArray('trail', filter.trail)" type="checkbox"><label>Trail</label>
+        <br>
+        <input ng-model="filter.cc" ng-change="updateCategoryArray('x-country', filter.cc)" type="checkbox"><label>Cross Country</label>
+        <br>
+        <input ng-model="filter.track" ng-change="updateCategoryArray('track', filter.track)" type="checkbox"><label>Track</label>
+    </div>
+    <br>
+    <button class="profile-card resetButton" ng-click="resetFilterArray()">X</button> &nbsp; Reset
+<!--    <div class="mhead"><a href="" class="off-canvas-submenu-call">Category<span class="right"> + </span></a></div>
+    <div class="off-canvas-submenu ulbox">
+
+        <div class=""><input ng-model="filter.overpronate" ng-change="updateFootMotionArray('supportmin', filter.overpronate)" type="checkbox"><label>Road</label></div>
+        <br>
+        <div class=""><input ng-model="filter.trail" ng-change="updateCategoryArray('trail', filter.trail)" type="checkbox"><label>Trail</label></div>
+        <br>
+        <div class=""><input ng-model="filter.cc" ng-change="updateCategoryArray('cc', filter.cc)" type="checkbox"><label>Cross Country</label></div>
+        <br>
+        <div class=""><input ng-model="filter.track" ng-change="updateCategoryArray('track', filter.track)" type="checkbox"><label>Track</label></div>
+        <br>
+        <div class=""><input ng-model="filter.roadracing" ng-change="updateCategoryArray('roadracing', filter.roadracing)" type="checkbox"><label>road racing</label></div>
+    </div>
+
+    width narrow medium wide extra wide-->
+
+
+</div>
+
+
+
+
+
+
+<script>
+    $(document).foundation();
+    $(".off-canvas-submenus").hide();
+    $(".off-canvas-submenu-calls").click(function () {
+        var icon = $(this).parent().next(".off-canvas-submenus").is(':visible') ? '+' : '-';
+        $(this).parent().next(".off-canvas-submenus").slideToggle('fast');
+        $(this).find("span").text(icon);
+    });
+</script>

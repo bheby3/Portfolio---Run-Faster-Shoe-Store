@@ -1,0 +1,30 @@
+<div class=" shoeContainer">
+    <div class=" large-3 medium-6 columns profile-card" ng-repeat="prod in products | multiFilter:filter">
+        Brand: {{prod.brand}}
+        <br>
+        Model:&nbsp;{{prod.model}} &nbsp;&nbsp;
+        <br>
+        <div class="style"></div>
+        Style: {{prod.styles}}
+        <br>
+        Offset: {{prod.offset}}mm
+        <br>
+        Brand: {{prod.brand}}
+        <br>
+        Weight: {{prod.weight}}oz
+        <br>
+        Gender: {{prod.gender}}
+        <br>
+        Category: {{prod.category}}
+        <br>
+        <span>Stability: {{prod.stability}}</span>
+        <br>
+        <img class="item-image" ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">
+        <br>
+        <span class="price">Price: {{prod.price | currency}}</span>
+        <br>
+        description: <span class="description">{{prod.description}}</span>
+        <br>
+        <button class="button" ng-click="removeProduct(prod._id)">admin delete product</button>
+    </div>
+</div>

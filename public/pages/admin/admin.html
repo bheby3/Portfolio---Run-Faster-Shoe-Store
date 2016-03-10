@@ -1,0 +1,39 @@
+<navbar></navbar>
+
+<div class="titleBar title-bar">
+    <div class="titleLeft">
+        <button class="toggleMenu" id="leftButton" type="button" data-toggle="offCanvasLeft">
+            <i class="fa fa-bars fa-2x"></i>
+        </button>
+        <div class="toggleMenu">MENU</div>
+    </div>
+    <div class="titleRight">
+        <div class="addInventory">ADD PRODUCT</div>
+        <button ng-click="addProductForm()"><i class="fa fa-bars fa-2x"></i></button>
+    </div>
+</div>
+
+<div class="flexRow">
+    <selectpagemenu class="sticky hideThisMenu"></selectpagemenu>
+    <div class="flexColumn" id="content">
+        <addProduct class="adminMainContainer" ng-show="addProductVariable"></addProduct>
+        <adminshoes class="adminMainContainer"></adminshoes>
+    </div>
+</div>
+
+<script>
+    $(document).foundation();
+    $(".off-canvas-submenu").hide();
+    $(".off-canvas-submenu-call").click(function () {
+        var icon = $(this).parent().next(".off-canvas-submenu").is(':visible') ? '+' : '-';
+        $(this).parent().next(".off-canvas-submenu").slideToggle('fast');
+        $(this).find("span").text(icon);
+    });
+    $("#leftButton").on('click', function () {
+        var toggle = $(this).data('toggle');
+        $('#content').css('margin-left', toggle ? -210 : 0);
+        $('.hideThisMenu').css('visibility', toggle ? "hidden" : "visible");
+        $(this).data('toggle', !toggle);
+    });
+
+</script>

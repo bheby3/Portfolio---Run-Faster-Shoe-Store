@@ -1,0 +1,48 @@
+Product
+
+<div class="row shoeCont">
+    <!--<div class="large-3 medium-4 columns profile-card" ng-repeat="prod in products | support:stabilityFilter">-->
+    <!--<div class="large-3 medium-6 columns profile-card shoes" ng-repeat="prod in products | multiFilter:filter">-->
+        <!--{{filter}}-->
+        <!--<div class="large-3 medium-4 columns profile-card shoes" ng-repeat="prod in products | filter: filter">-->
+        <span class="model">brand:{{prod.brand}}</span> &nbsp;&nbsp;
+        <br>
+        <span class="model">offset:{{prod.offset}}</span> &nbsp;&nbsp;
+        <br>
+        <span class="model">model:{{prod.model}}</span> &nbsp;&nbsp;
+        <br>
+        <span class="model">support:{{prod.stability}}</span> &nbsp;&nbsp;
+        <br>
+
+        <div class="style" ng-repeat="style in prod.styles">{{style}}</div>
+        <a ui-sref="product" ng-click="showProductDetails(prod._id)">
+            <img class="item-image" ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">
+        </a>
+
+        <hr>
+        <span class="price">Price: {{prod.price | currency}}</span>
+        <span class="description">{{prod.stability}}</span>
+        <br>
+        <span class="description">{{prod.description}}</span>
+        <!--{{prod.image}}-->
+        <!--<img ng-src="http://placeimg.com/200/200/people" alt="">-->
+
+        <!--<img ng-repeat="img in prod.image" ng-src="{{img}}" alt="no img">-->
+        <!--Category: {{prod.category}}-->
+        <!--<br>-->
+        <!--Stability: {{prod.stability}}-->
+        <!--<br>-->
+        <!--Styles: {{prod.styles}}-->
+        <!--<br>-->
+        <!--Width: {{prod.width}}-->
+        <!--<br>-->
+        <!--Id: {{prod._id}}-->
+        <!--<br>-->
+        <!--<button class="button" ui-sref="product">select product</button>-->
+        <button class="button" ng-click="addProductToCart(prod._id)">add product</button>
+
+        <button class="button" ng-click="removeProduct(prod._id)">delete product</button>
+    <!--</div>-->
+
+
+</div>
